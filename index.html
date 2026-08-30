@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio — [Your Name]</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Decorative blueprint-grid backdrop, fixed behind all content -->
+<div class="viewport-grid" aria-hidden="true"></div>
+
+<!-- ============================= -->
+<!-- HERO                          -->
+<!-- ============================= -->
+<header class="hero">
+  <span class="hero__corner hero__corner--tl" aria-hidden="true"></span>
+  <span class="hero__corner hero__corner--tr" aria-hidden="true"></span>
+  <span class="hero__corner hero__corner--bl" aria-hidden="true"></span>
+  <span class="hero__corner hero__corner--br" aria-hidden="true"></span>
+
+  <p class="eyebrow">// INDEX</p>
+  <h1 class="hero__title">
+    <span class="hero__title-prefix">Portfolio</span>
+    <span class="hero__title-name">[Your Name]</span>
+  </h1>
+</header>
+
+<!-- ============================= -->
+<!-- ABOUT / DESCRIPTION           -->
+<!-- ============================= -->
+<section class="about">
+  <p class="about__text">
+    [[ Short description goes here — a few lines about who you are, what you build,
+    and what this collection of projects shows. ]]
+  </p>
+</section>
+
+<!-- ============================= -->
+<!-- PROJECTS                      -->
+<!-- ============================= -->
+<!--
+  TEMPLATE USAGE:
+  Each project lives in one <article class="project"> block below.
+  To add another project, copy the ENTIRE <article class="project">...</article>
+  block (including the comment markers) and paste it again inside <main>.
+  Update the PROJECT_0x index label to keep the numbering in order.
+-->
+<main class="projects">
+
+  <!-- PROJECT BLOCK START -->
+  <article class="project">
+    <div class="project__meta">
+      <span class="project__index">PROJECT_01</span>
+    </div>
+
+    <div class="project__body">
+      <div class="project__text">
+        <h2 class="project__title">[[ Project Name ]]</h2>
+
+        <a class="project__link" href="#" target="_blank" rel="noopener">
+          [[ link.to/project — Steam, itch.io, App Store, repo, etc. ]]
+        </a>
+
+        <p class="project__description">
+          [[ Short description — engine, platform, genre, what the project is. ]]
+        </p>
+
+        <ul class="project__contributions">
+          <li>[[ Contribution point one ]]</li>
+          <li>[[ Contribution point two ]]</li>
+          <li>[[ Contribution point three ]]</li>
+        </ul>
+      </div>
+
+      <div class="project__media">
+        <!--
+          Replace this placeholder with your image or video, e.g.:
+          <img src="assets/project-name.jpg" alt="[[ Project Name ]] screenshot">
+          or
+          <video src="assets/project-name.mp4" controls muted playsinline></video>
+        -->
+        <div class="project__media-placeholder">
+          <span>[[ IMAGE / VIDEO ]]</span>
+        </div>
+      </div>
+    </div>
+  </article>
+  <!-- PROJECT BLOCK END -->
+
+</main>
+
+<footer class="site-footer">
+  <p>[[ Optional footer — contact links, year, etc. ]]</p>
+</footer>
+
+</body>
+</html>
