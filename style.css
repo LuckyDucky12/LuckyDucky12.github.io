@@ -181,16 +181,14 @@ body {
 
 .project__body {
   display: grid;
-  grid-template-columns: 1fr 0fr;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
   gap: 2rem;
   padding: 2rem;
 }
 
-@media (max-width: 950px) {
-  .project__body {
-    grid-template-columns: 1fr;
-  }
-}
+.project__text,
+.project__media { min-width: 0; }
+
 
 .project__title {
   margin: 0 0 0.5rem;
@@ -244,7 +242,7 @@ body {
 .project__media {
   height: 320px;
   /* max-height: 500px; */
-  width: 500px;
+  width: 100%;
   max-width: 500px;
   justify-self: center;  /* centered horizontally in its grid cell (side-by-side and stacked) */
   align-self: center;    /* centered vertically against the text column */
@@ -274,16 +272,6 @@ body {
   display: block;
 }
 
-/* Stack text above media on narrower viewports */
-@media (max-width: 800px) {
-  .project__body {
-    grid-template-columns: 1fr;
-  }
-  .project__media,
-  .project__media-placeholder {
-    min-height: 240px;
-  }
-}
 
 /* =========================================================
    FOOTER
@@ -296,4 +284,37 @@ body {
   color: var(--text-faint);
   font-family: var(--font-mono);
   font-size: 0.8rem;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   Keep this section LAST: these rules only win over the base
+   rules above because they come after them in the file.
+   ========================================================= */
+
+/* Stack text above media */
+@media (max-width: 950px) {
+  .project__body {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* Phones */
+@media (max-width: 600px) {
+  .hero    { padding: 4rem 1.25rem 3rem; }
+  .hero__title { font-size: 2.1rem; }
+  .hero__role  { font-size: 1rem; }
+
+  .about   { padding: 0 1.25rem 2rem; }
+
+  .projects { padding: 2rem 1rem; gap: 2rem; }
+  .project__body { padding: 1.25rem; gap: 1.5rem; }
+  .project__title { font-size: 1.4rem; }
+
+  /* fixed 320px height crops badly in a narrow box */
+  .project__media { height: auto; aspect-ratio: 16 / 9; }
+  .project__media-placeholder { min-height: 0; }
+
+  .site-footer { padding: 2rem 1.25rem 3rem; }
 }
